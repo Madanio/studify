@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'services/auth_service.dart';
 import 'screens/login_screen.dart';
 import 'screens/student_dashboard.dart';
 import 'screens/parent_dashboard.dart';
 import 'screens/admin_dashboard.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Initialize date formatting for French locale
+  await initializeDateFormatting('fr_FR', null);
   runApp(const StudifyApp());
 }
 
